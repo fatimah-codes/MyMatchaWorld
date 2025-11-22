@@ -42,9 +42,11 @@ p {
 }
 
 #modal img {
-    max-width: 90%;
-    max-height: 90%;
+    width: 90vw;
+    height: auto;
+    max-height: 90vh;
     margin-top: 5%;
+    object-fit: contain;
 }
 
 #close, #prev, #next {
