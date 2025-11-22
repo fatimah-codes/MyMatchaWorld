@@ -43,7 +43,9 @@ p {
 
 #modal img {
     width: 90vw;
-    height: 90vh;
+    height: auto;
+    max-height: 90vh;
+    margin-top: 5%;
     object-fit: contain;
 }
 #close, #prev, #next {
