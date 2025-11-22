@@ -1,28 +1,31 @@
 const images = document.querySelectorAll('.preview');
-let currentIndex = null;
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+const closeBtn = document.getElementById('close');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+let currentIndex = 0;
 
 images.forEach((img, index) => {
-    img.addEventListener('click', function() {
-        if (img.classList.contains('enlarged')) {
-            img.classList.remove('enlarged');
-            currentIndex = null;
-        } else {
-            images.forEach(i => i.classList.remove('enlarged'));
-            img.classList.add('enlarged');
-            currentIndex = index;
-        }
+    img.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+        currentIndex = index;
     });
 });
-document.addEventListener('keydown', function(e) {
-    if (currentIndex !== null) {
-        if (e.key === 'ArrowRight') {
-            images[currentIndex].classList.remove('enlarged');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('enlarged');
-        } else if (e.key === 'ArrowLeft') {
-            images[currentIndex].classList.remove('enlarged');
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            images[currentIndex].classList.add('enlarged');
-        }
-    }
-});
+
+closeBtn.onclick = () => modal.style.display = 'none';
+
+prevBtn.onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImg.src = images[currentIndex].src;
+};
+
+nextBtn.onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImg.src = images[currentIndex].src;
+};
+
+modal.onclick = (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+};
