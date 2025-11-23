@@ -97,7 +97,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     font-size: inherit;
     color: rgb(9, 113, 9);
     background-size: cover;
