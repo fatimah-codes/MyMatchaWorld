@@ -92,14 +92,12 @@ p {
 }
 
 .recipe-text {
-    width: 300px;
-    height: 400px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 18px;
+    font-size: ;
     color: rgb(9, 113, 9);
     background-size: cover;
     background-position: center;
