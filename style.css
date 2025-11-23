@@ -45,8 +45,8 @@ p {
 }
 
 #modal img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 90vw;
+    max-height: 90vh;
     border-radius: 10px;
     object-fit: cover;
 }
